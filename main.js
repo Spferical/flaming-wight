@@ -5,6 +5,8 @@ var builder = require('builder');
 var guard = require('guard');
 var attacker = require('attacker');
 var rangedattacker = require('rangedattacker');
+var upgrader = require('upgrader');
+var upgraderhelper = require('upgraderhelper');
 
 
 Spawn.prototype.createRole = function(role) {
@@ -91,5 +93,9 @@ for(var name in Game.creeps) {
         attacker(creep);
     } else if (creep.memory.role == 'rangedattack') {
         rangedattacker(creep);
+    } else if (creep.memory.role == 'upgrader') {
+        upgrader(creep);
+    } else if (creep.memory.role == 'upgraderhelper') {
+        upgraderhelper(creep);
     }
 }
