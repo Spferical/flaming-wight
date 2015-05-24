@@ -8,7 +8,7 @@ module.exports = function(creep) {
 	}
 	else {
 	    // repair any structures that are being destroyed
-	    var target = creep.pos.findClosest(FIND_MY_STRUCTURES, {
+	    var target = creep.pos.findClosest(FIND_STRUCTURES, {
             filter: function(object) {
                 return object.hits <= object.hitsMax / 2;
             }
