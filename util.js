@@ -8,7 +8,7 @@ var get_energy_from_spawn_or_extension = function(creep) {
     var nearestSpawn = creep.pos.findClosest(FIND_MY_SPAWNS, {
         filter: function(spawn) {
             return spawn.energy > 1000;
-        });
+        }});
     if (!nearestExtension) {
         target = nearestSpawn;
     } else {
@@ -24,3 +24,5 @@ var get_energy_from_spawn_or_extension = function(creep) {
     creep.moveTo(target);
     target.transferEnergy(creep);
 }
+
+module.exports = {get_energy_from_spawn_or_extension = get_energy_from_spawn_or_extension};
