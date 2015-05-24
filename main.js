@@ -44,7 +44,7 @@ var roles = {
     'guard': [TOUGH, MOVE, ATTACK, ATTACK, ATTACK],
     'attack': [TOUGH, ATTACK, ATTACK, MOVE, MOVE],
     'rangedattack': [TOUGH, MOVE, RANGED_ATTACK, RANGED_ATTACK, RANGED_ATTACK],
-    'upgrader': [MOVE, WORK, WORK, WORK, WORK],
+    'upgrader': [MOVE, WORK, WORK, WORK, CARRY],
     'upgraderhelper': [MOVE, MOVE, CARRY, CARRY, CARRY],
 }
 
