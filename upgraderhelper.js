@@ -20,7 +20,7 @@ module.exports = function(creep) {
             var helpers = creep.room.find(FIND_MY_CREEPS, {
                 filter: function(creep) {
                     return creep.memory.role == 'upgraderhelper'
-                        && creep.memory.upgrader == upgrader;
+                        && creep.memory.upgrader == upgrader.id;
                 }
             });
             if (helpers.length < 2) {
@@ -34,7 +34,7 @@ module.exports = function(creep) {
     if (creep.energy == 0) {
         util.get_energy_from_spawn_or_extension(creep);
     } else {
-        var upgrader = Game.getObjectById(creep.memory.upgrader);
+        upgrader = Game.getObjectById(creep.memory.upgrader);
         creep.moveTo(upgrader);
         if (upgrader.energy < upgrader.energyCapacity / 2) {
             creep.transferEnergy(upgrader);

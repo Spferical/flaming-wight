@@ -1,4 +1,6 @@
-var get_energy_from_spawn_or_extension = function(creep) {
+module.exports = {};
+
+module.exports.get_energy_from_spawn_or_extension = function(creep) {
     var target = null;
     var nearestExtension = creep.pos.findClosest(FIND_MY_STRUCTURES, {
         filter: function(structure) {
@@ -12,8 +14,8 @@ var get_energy_from_spawn_or_extension = function(creep) {
     if (!nearestExtension) {
         target = nearestSpawn;
     } else {
-        var extDist = creep.pos.pathTo(nearestExtension);
-        var spaDist = creep.pos.pathTo(nearestSpawn);
+        var extDist = creep.pos.findPathTo(nearestExtension);
+        var spaDist = creep.pos.findPathTo(nearestSpawn);
         if (extDist < spaDist) {
             target = nearestExtension;
         } else {
@@ -24,5 +26,3 @@ var get_energy_from_spawn_or_extension = function(creep) {
     creep.moveTo(target);
     target.transferEnergy(creep);
 }
-
-module.exports = {get_energy_from_spawn_or_extension = get_energy_from_spawn_or_extension};
