@@ -1,6 +1,13 @@
 util = require('util');
 
 module.exports = function(creep) {
+
+    // unassign any dead or lost upgraders
+    var upgrader = Game.getObjectById(creep.memory.upgrader);
+    if (upgrader == null or upgrader.memory.role != 'upgrader') {
+        creep.memory.upgrader = null;
+    }
+
     // assign to an upgrader if not assigned already
     if (!creep.memory.upgrader) {
         var upgraders = creep.pos.findClosest(FIND_MY_CREEPS, {
