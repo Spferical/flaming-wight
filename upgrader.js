@@ -1,5 +1,5 @@
 module.exports = function(creep) {
-    if (creep.energy < creep.energyCapacity) {
+    if (creep.energy == 0) {
         // find some energy and grab it
         var energy = creep.pos.findClosest(
                 FIND_DROPPED_ENERGY, {
@@ -13,10 +13,11 @@ module.exports = function(creep) {
             creep.moveTo(Game.spawns.Spawn1);
             Game.spawns.Spawn1.transferEnergy(creep);
         }
+    } else {
+        // go to room controller and upgrade it
+        var controller = creep.room.controller;
+        creep.moveTo(controller);
+        creep.upgradeController(controller);
     }
-    // go to room controller and upgrade it
-    var controller = creep.room.controller;
-    creep.moveTo(controller);
-    creep.upgradeController(controller);
 
 }
