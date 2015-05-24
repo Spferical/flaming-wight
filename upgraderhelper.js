@@ -4,7 +4,7 @@ module.exports = function(creep) {
 
     // unassign any dead or lost upgraders
     var upgrader = Game.getObjectById(creep.memory.upgrader);
-    if (upgrader == null or upgrader.memory.role != 'upgrader') {
+    if (upgrader == null || upgrader.memory.role != 'upgrader') {
         creep.memory.upgrader = null;
     }
 
