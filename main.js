@@ -53,8 +53,10 @@ var desiredRoles = {
     'collector': 5,
     'guard': 2,
     'attack': 0,
-    'builder': 5,
+    'builder': 3,
     'rangedattack': 0,
+    'upgrader': 1,
+    'upgraderhelper': 2,
 }
 
 var existingRoles = {}
