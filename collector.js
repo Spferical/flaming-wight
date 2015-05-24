@@ -1,9 +1,10 @@
 module.exports = function(creep) {
     if (creep.energy < creep.energyCapacity) {
-        var energy = creep.pos.findClosest(FIND_DROPPED_ENERGY,
-            {filter: function(object) {
-                return creep.isSafe(object.pos);
-            }});
+        var energy = creep.pos.findClosest(
+                FIND_DROPPED_ENERGY, {
+                    filter: function(object) {
+                        return creep.isSafe(object.pos);
+                    }});
         creep.moveTo(energy);
         creep.pickup(energy);
     } else {
@@ -18,11 +19,11 @@ module.exports = function(creep) {
                 filter: function(object) {
                     return object.structureType == STRUCTURE_EXTENSION
                         && object.energy < object.energyCapacity * 0.9;
-            }});
+                }});
         }
         if (target) {
-        	creep.moveTo(target);
-        	creep.transferEnergy(target)
+            creep.moveTo(target);
+            creep.transferEnergy(target)
         }
     }
 }

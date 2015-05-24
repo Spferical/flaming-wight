@@ -29,7 +29,7 @@ var getTarget = function(creep) {
         structTargetDist = creep.pos.findPathTo(structTarget);
         if (creepTargetDist < structTargetDist + 5) {
             target = creepTarget;
-    } else{ 
+        } else{ 
             target = structTarget;
         }
     }
@@ -73,18 +73,18 @@ for (var role in desiredRoles) {
 }
 
 for(var name in Game.creeps) {
-	var creep = Game.creeps[name];
+    var creep = Game.creeps[name];
 
-	if(creep.memory.role == 'harvester') {
-		harvester(creep);
-	} else if (creep.memory.role == 'miner') {
-	    miner(creep);
-	} else if (creep.memory.role == 'collector') {
+    if(creep.memory.role == 'harvester') {
+        harvester(creep);
+    } else if (creep.memory.role == 'miner') {
+        miner(creep);
+    } else if (creep.memory.role == 'collector') {
         collecter(creep);
-	} else if (creep.memory.role == 'builder') {
-	    builder(creep);
-	} else if (creep.memory.role == 'guard') {
-    	guard(creep);
+    } else if (creep.memory.role == 'builder') {
+        builder(creep);
+    } else if (creep.memory.role == 'guard') {
+        guard(creep);
     } else if (creep.memory.role == 'attack') {
         attacker(creep);
     } else if (creep.memory.role == 'rangedattack') {

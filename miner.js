@@ -13,13 +13,13 @@ module.exports = function(creep) {
                 bestDistance = distance;
             }
         }
-	    if (bestSource) {
-    	    creep.memory.sourceid = bestSource.id;
-	    }
+        if (bestSource) {
+            creep.memory.sourceid = bestSource.id;
+        }
     }
     if (creep.memory.sourceid) {
-	    source = Game.getObjectById(creep.memory.sourceid)
-		creep.moveTo(source);
-		creep.harvest(source);
+        source = Game.getObjectById(creep.memory.sourceid);
+        creep.moveTo(source);
+        creep.harvest(source);
     }
 }
