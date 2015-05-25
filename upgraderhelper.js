@@ -9,13 +9,15 @@ module.exports = function(creep) {
     }
 
     // assign to an upgrader if not assigned already
+    console.log(creep.memory.upgrader);
     if (!creep.memory.upgrader) {
         var upgraders = creep.pos.findClosest(FIND_MY_CREEPS, {
             filter: function(creep) {
                 return (creep.memory.role == 'upgrader');
             }
         });
-        for (upgrader in upgraders) {
+        for (index in upgraders) {
+            var upgrader = upgraders[index];
             // find any other helpers helping this upgrader
             var helpers = creep.room.find(FIND_MY_CREEPS, {
                 filter: function(creep) {
